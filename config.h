@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "󰣇", "", "", "", "", };
+static const char *tags[] = { "󰣇", "", "", "", };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -105,7 +105,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
+	// TAGKEYS(                        XK_5,                      4)
 	// TAGKEYS(                        XK_6,                      5)
 	// TAGKEYS(                        XK_7,                      6)
 	// TAGKEYS(                        XK_8,                      7)

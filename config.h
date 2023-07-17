@@ -31,7 +31,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "󰣇", "", "", "", };
+static const char *tags[] = { "󰣇", "", "", "", };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -50,9 +50,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
-	{ "",      NULL },    /* no layout function means floating behavior */
-	{ "",      monocle },
+	{ "󰕮",      tile },    /* first entry is default */
+	{ "󰖲",      NULL },    /* no layout function means floating behavior */
+	{ "󰊓",      monocle },
 };
 
 /* key definitions */

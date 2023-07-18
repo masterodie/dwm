@@ -102,6 +102,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Left,   rotatetags,     {.i = -1 } },
+	{ MODKEY,                       XK_Right,  rotatetags,     {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -112,6 +114,7 @@ static const Key keys[] = {
 	// TAGKEYS(                        XK_8,                      7)
 	// TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask|ControlMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 	{ MODKEY|ShiftMask,             XK_q,      spawn,           {.v = shutdown} },
 
 	{ 0, XF86XK_AudioMute,        spawn, {.v = mutecmd } },

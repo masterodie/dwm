@@ -69,6 +69,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_accent, "-sf", col_gray4, NULL };
+static const char *shutdown[] = { "dmenu_shutdown", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *volupcmd[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%",   NULL };
@@ -110,7 +111,8 @@ static const Key keys[] = {
 	// TAGKEYS(                        XK_7,                      6)
 	// TAGKEYS(                        XK_8,                      7)
 	// TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask|ControlMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_q,      spawn,           {.v = shutdown} },
 
 	{ 0, XF86XK_AudioMute,        spawn, {.v = mutecmd } },
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },

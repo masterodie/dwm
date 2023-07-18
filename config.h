@@ -17,17 +17,20 @@ static const char col_gray2[]       = "#282828";
 static const char col_gray3[]       = "#7c6f64";
 static const char col_gray4[]       = "#f9f5d7";
 static const char col_accent[]        = "#076678";
+static const char col_accent_light[]        = "#83a598";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_accent,  col_accent  },
+	[SchemeNorm]   = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]    = { col_gray4, col_accent,  col_accent  },
+	[SchemeTitle]  = { col_accent_light, col_gray1,  col_accent  },
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border*/
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
+	[SchemeNorm]   = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]    = { OPAQUE, baralpha, borderalpha },
+	[SchemeTitle]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */

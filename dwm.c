@@ -963,7 +963,7 @@ drawbar(Monitor *m)
 	if (!m->showbar)
 		return;
 
-	if (showsystray && m == systraytomon(m)) {
+	if (showsystray) {
 		stw = getsystraywidth();
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, m->ww - stw, 0, stw, bh, 1, 1);
@@ -972,9 +972,6 @@ drawbar(Monitor *m)
 	/* draw status first so it can be overdrawn by tags later */
 	if (m == selmon || 1) { /* status is only drawn on selected monitor */
 		tw = m->ww - drawstatusbar(m, bh, stext);
-		drw_setscheme(drw, scheme[SchemeNorm]);
-		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
-		drw_text(drw, m->ww - tw - stw, 0, tw, bh, 0, stext, 0);
 	}
 
 	for (c = m->clients; c; c = c->next) {
@@ -1073,7 +1070,7 @@ expose(XEvent *e)
 	if (ev->count == 0 && (m = wintomon(ev->window))) {
 		drawbar(m);
 
-		if (showsystray && m == systraytomon(m))
+		if (showsystray)
 			updatesystray(0);
 	}
 }
